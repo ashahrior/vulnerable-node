@@ -48,3 +48,4 @@ pipeline:
         type: CI
   delegateSelectors:
     - docker-delegate
+    - linux-amd64
