@@ -6,9 +6,10 @@ pipeline:
   properties:
     ci:
       codebase:
-        build: <+input>
         connectorRef: ashahrior
         repoName: vulnerable-node
+        build: <+input>
+        sparseCheckout: []
   stages:
     - stage:
         identifier: build
@@ -23,6 +24,7 @@ pipeline:
                   identifier: installdependencies
                   name: install dependencies
                   spec:
+                    shell: Sh
                     command: npm install
                   timeout: ""
                   type: Run
@@ -30,11 +32,11 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    caching: true
                     connectorRef: <+input>
-                    repo: hello/world
+                    repo: ashahriordsi/testharness
                     tags:
                       - latest
+                    caching: true
                   timeout: ""
                   type: BuildAndPushDockerRegistry
           platform:
