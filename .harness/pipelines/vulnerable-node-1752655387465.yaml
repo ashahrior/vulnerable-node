@@ -32,7 +32,7 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    connectorRef: <+input>
+                    connectorRef: ashahriordsiconn
                     repo: ashahriordsi/testharness
                     tags:
                       - latest
