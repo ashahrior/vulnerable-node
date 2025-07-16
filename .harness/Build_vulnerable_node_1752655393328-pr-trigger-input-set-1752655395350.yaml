@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_vulnerable_node_1752655393328-pr-trigger-input-set
+  identifier: Build_vulnerable_node_1752655393328prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_vulnerable_node_1752655393328
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
