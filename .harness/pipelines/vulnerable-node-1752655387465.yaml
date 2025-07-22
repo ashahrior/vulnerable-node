@@ -29,6 +29,15 @@ pipeline:
                   timeout: ""
                   type: Run
               - step:
+                  type: Run
+                  name: environment variables
+                  identifier: environment_variables
+                  spec:
+                    shell: Sh
+                    command: printenv
+                  description: list out environment variables
+                contextType: Pipeline
+              - step:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
